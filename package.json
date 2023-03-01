@@ -1,15 +1,27 @@
 {
   "name": "farmacianode",
   "version": "1.0.0",
-  "description": "",
   "main": "Clases.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --ignore feedback.json server.js"
+    "dev": "nodemon --ignore feedback.json server.js",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jereferz/FarmaciaNode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jereferz/FarmaciaNode/issues"
+  },
+  "homepage": "https://github.com/Jereferz/FarmaciaNode#readme",
+  "description": ""
 }
