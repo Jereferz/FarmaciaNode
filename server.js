@@ -15,8 +15,13 @@ const port = 5000;
 app.get('/', (request, response) => {
     response.sendFile(path.join(__dirname, './View/Menu.html'));
 });
-app.get('/Rmedicine', (request, response) => {
-    response.sendFile(path.join(__dirname, './View/RegisterMedicine.html'));
+app.get('/RegisterMedicine', (request, response) => {
+    response.sendFile(path.join(__dirname, './forms/RegisterMedicine.html'));
+});
+app.post('/RegisterMedicine', (request,response) => {
+    console.log('llego un post Añadir');
+    funcion.RegisterMedicine(request.body);
+    response.redirect('/RegisterMedicine')
 });
 app.get('/Menu', (request, response) => {
     response.sendFile(path.join(__dirname, './View/Menu.html'));
