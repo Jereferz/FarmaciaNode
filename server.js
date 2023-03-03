@@ -25,7 +25,16 @@ app.post('/RegisterMedicine', (request,response) => {
 });
 app.get('/Menu', (request, response) => {
     response.sendFile(path.join(__dirname, './View/Menu.html'));
+    
 });
+app.get('/SeeMedicine', (request, response) => {//para obtener la vista de SeeMedicine.html
+    response.sendFile(path.join(__dirname, './View/SeeMedicine.html'));
+});
+/* app.post('/RegisterMedicine', (request,response) => {
+    console.log('llego un post Añadir');
+    funcion.RegisterMedicine(request.body);
+    response.redirect('/RegisterMedicine')
+}); */
 app.listen(port, () => {
     console.log('puerto listo');
 })
