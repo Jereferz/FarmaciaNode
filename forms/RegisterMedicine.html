@@ -11,37 +11,37 @@
 <body>
     <div class="navbar navbar-expand-lg bg-light">
         <nav class="nav nav-tabs">
-            <a class="nav-link active" aria-current="page" href="http://localhost:5000/RegisterMedicine">Registrar Medicina</a>
-            <a class="nav-link active" aria-current="page" href="http://localhost:5000/RegisterProvider">Registrar Proveedor</a>
-            <a class="nav-link active" aria-current="page" href="http://localhost:5000/SeeMedicine">Ver inventario</a>
-            <a class="nav-link active" aria-current="page" href="http://localhost:5000/SeeProvider">Ver Proveedores</a>
+            <a class="nav-link active" aria-current="page" href="http://localhost:3005/RegisterMedicine">Registrar Medicina</a>
+            <a class="nav-link active" aria-current="page" href="http://localhost:3005/RegisterProvider">Registrar Proveedor</a>
+            <a class="nav-link active" aria-current="page" href="http://localhost:3005/SeeMedicine">Ver inventario</a>
+            <a class="nav-link active" aria-current="page" href="http://localhost:3005/SeeProvider">Ver Proveedores</a>
     
         </nav>
     </div>
 
     <h2>Añadir Medicina</h2>
 
-    <form action="http://localhost:5000/addNuevoCliente" method="POST" class="row g-3 needs-validation" novalidate>
+    <form action="http://localhost:3001/RegisterMedicine" method="POST" class="row g-3 needs-validation" novalidate>
         <div class="col-md-4">
-            <label for="validationCustom01" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="nombre" name="nombre" required>
+            <label for="validationCustom01" class="form-label">Codigo</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Codigo" name="code" required>
         </div>
         <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="validationCustom02" name="apellido" placeholder="apellido">
+            <label for="validationCustom02" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="validationCustom02" name="name" placeholder="Nombre">
         </div>
         <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Fecha de Nacimiento</label>
+            <label for="validationCustomUsername" class="form-label">Cantidad</label>
             <div class="input-group has-validation">
-                <input type="date" class="form-control" id="validationCustomUsername"
-                    aria-describedby="inputGroupPrepend" name="edad" placeholder="02-07-1999">
+                <input type="text" class="form-control" id="validationCustomUsername"
+                    aria-describedby="inputGroupPrepend" name="amount" placeholder="Cantidad">
             </div>
         </div>
         <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Cuota</label>
-            <input type="text" class="form-control" id="validationCustom02" name="cuota" placeholder="$1500">
+            <label for="validationCustom02" class="form-label">Precio por unidad</label>
+            <input type="text" class="form-control" id="validationCustom02" name="unitPrice" placeholder="Precio">
         </div>
-        <div class="col-md-3">
+        <!-- <div class="col-md-3">
             <label for="validationCustom04" class="form-label">Sexo</label>
             <select class="form-select" name="sexo" required="">
                 <option selected disabled value="">Genero...</option>
@@ -54,10 +54,10 @@
         <div class="col-md-3">
             <label for="validationCustom05" class="form-label">DNI</label>
             <input type="text" class="form-control" id="validationCustom05" name="dni" placeholder="46253381" value="">
-        </div>
+        </div>-->
         <div class="col-12">
             <button class="btn btn-outline-success" type="submit" value="">Registrar</button>
-        </div>
+        </div> 
     </form>
 
 

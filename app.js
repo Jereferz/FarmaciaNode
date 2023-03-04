@@ -3,19 +3,19 @@ var fs = require('fs');
 const { Module } = require('module');
 var Medicine = [];
 var Provider = [];
-var recupararMedicine;
-var recupararProvider;
+var recuperarMedicine;
+var recuperarProvider;
 
 try {
-    recupararMedicine = fs.readFileSync('./Datos/MedicinesD.txt', 'utf8');
-    Medicine = JSON.parse(recupararMedicine);
+    recuperarMedicine = fs.readFileSync('./Datos/MedicinesD.txt', 'utf8');
+    Medicine = JSON.parse(recuperarMedicine);
     
 } catch (error) {
     Medicine = [];
 }
 try {
-    recupararProvider = fs.readFileSync('./Datos/ProvidersD.txt', 'utf8');
-    Provider = JSON.parse(recupararProvider);
+    recuperarProvider = fs.readFileSync('./Datos/ProvidersD.txt', 'utf8');
+    Provider = JSON.parse(recuperarProvider);
 } catch (error) {
     Provider = [];
 }
@@ -24,7 +24,7 @@ function RegisterMedicine(Med) {
     var name = Med.name;
     var amount = Med.amount;
     var unitPrice = Med.unitPrice;
-    var medici= new clases.Cliente(code, name, amount, unitPrice);
+    var medici= new clases.Medicine(code, name, amount, unitPrice);
     Medicine.push(medici);
     var datosMedicine = JSON.stringify(Medicine);
     fs.writeFile('./Datos/MedicinesD.txt', datosMedicine, (error, datos) => {
