@@ -6,22 +6,25 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const funcion = require('./app'); //importo  las funciones
-app.use(express.json());
+
+app.use(express.json()); //se encarga de agregar a nuestro 
+//request el campo body de acuerdo al tipo de contenido (texto) enviado en las cabeceras http
 app.use(express.urlencoded({
     extended: false
-}));
+}));//permite codificar matrices y objetos enriquecidos en formato de codificación URL
+
 const port = 3005;
 
-app.get('/', (request, response) => { //el servidor recibe la ruta ver  
+app.get('/', (request, response) => { 
     response.sendFile(path.join(__dirname, './View/Menu.html'));
 });
-app.get('/RegisterMedicine', (request, response) => {
-    response.sendFile(path.join(__dirname, './forms/RegisterMedicine.html'));
+app.get('/RegisterMedicine', (request, response) => {//Cuando se reciba la ruta /forms/RegisterMedicine.html en el server
+    response.sendFile(path.join(__dirname, './forms/RegisterMedicine.html'));// devuelve el formulario de RegisterMedicine.html
 });
-app.post('/RegisterMedicine', (request,response) => {
+app.post('/RegisterMedicine', (request,response) => {//(Objeto y atributo) donde el atributo es un json
     console.log('llego un post Añadir');
-    funcion.RegisterMedicine(request.body);
-    response.redirect('/RegisterMedicine')
+    funcion.RegisterMedicine(request.body); // pedido y json con el contenido del formulario
+    response.redirect('/RegisterMedicine') // Dudas ???? como resuelve esta parte
 });
 app.get('/Menu', (request, response) => {
     response.sendFile(path.join(__dirname, './View/Menu.html'));
