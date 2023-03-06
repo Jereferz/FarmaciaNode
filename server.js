@@ -18,21 +18,21 @@ const port = 3005;
 app.get('/', (request, response) => { 
     response.sendFile(path.join(__dirname, './View/Menu.html'));
 });
-app.get('/RegisterMedicine', (request, response) => {//Cuando se reciba la ruta /forms/RegisterMedicine.html en el server
+app.get('/registerMedicine', (request, response) => {//Cuando se reciba la ruta /forms/RegisterMedicine.html en el server
     response.sendFile(path.join(__dirname, './forms/RegisterMedicine.html'));// devuelve el formulario de RegisterMedicine.html
 });
-app.get('/RegisterProvider', (request, response) => {
+app.get('/registerProvider', (request, response) => {
     response.sendFile(path.join(__dirname, './forms/RegisterProvider.html'));
 });
-app.post('/RegisterMedicine', (request,response) => {//(Objeto y atributo) donde el atributo es un json
+app.post('/registerMedicine', (request,response) => {//(Objeto y atributo) donde el atributo es un json
     console.log('llego un post AñadirM');
-    funcion.RegisterMedicine(request.body); // pedido y json con el contenido del formulario
-    response.redirect('/RegisterMedicine') // Dudas ???? como resuelve esta parte
+    funcion.registerMedicine(request.body); // pedido y json con el contenido del formulario
+    response.redirect('/registerMedicine') // Dudas ???? como resuelve esta parte
 });
-app.post('/RegisterProvider', (request,response) => {
+app.post('/registerProvider', (request,response) => {
     console.log('llego un post AñadirP');
-    funcion.RegisterProvider(request.body); 
-    response.redirect('/RegisterProvider')
+    funcion.registerProvider(request.body); 
+    response.redirect('/registerProvider')
 });
 app.get('/Menu', (request, response) => {
     response.sendFile(path.join(__dirname, './View/Menu.html'));

@@ -20,7 +20,7 @@ try {
 } catch (error) {
     Provider = [];
 }
-function RegisterMedicine(Med) {
+function registerMedicine(Med) {
     var code = Med.code;
     var name = Med.name;
     var amount = Med.amount;
@@ -36,7 +36,7 @@ function RegisterMedicine(Med) {
         }
     });
 }
-function RegisterProvider(Pro) {
+function registerProvider(Pro) {
     var nameP = Pro.nameP;
     var phoneNumber = Pro.phoneNumber;
     var objPro= new clases.Provider(nameP, phoneNumber);
@@ -60,7 +60,7 @@ function deleteMedicine(Med) {
     var codeM = Med.code;
     Medicine.splice(codeM, 1);
     var medDatos = JSON.stringify(Medicine);
-    fs.writeFile('./Datos/MedicineD.txt', medDatos, (error) => {
+    fs.writeFile('./Datos/MedicinesD.txt', medDatos, (error) => {
         if (error) {
             console.log('archivo no leido');
         } else {
@@ -69,9 +69,9 @@ function deleteMedicine(Med) {
     });
 }
 module.exports = {
-    RegisterMedicine,
+    registerMedicine,
     SeeMedicine,
-    RegisterProvider,
+    registerProvider,
     SeeProvider,
     deleteMedicine
 };
