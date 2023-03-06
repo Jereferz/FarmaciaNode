@@ -13,7 +13,6 @@ try {
 } catch (error) {
     Medicine = [];
 }
-// Type moon Gray
 try {
     recuperarProvider = fs.readFileSync('./Datos/ProvidersD.txt', 'utf8');
     Provider = JSON.parse(recuperarProvider);
@@ -26,8 +25,8 @@ function registerMedicine(Med) {
     var amount = Med.amount;
     var unitPrice = Med.unitPrice;
     var medici= new clases.Medicine(code, name, amount, unitPrice);
-    Medicine.push(medici);
-    var datosMedicine = JSON.stringify(Medicine);
+    Medicine.push(medici); //añade el elemento al final del array
+    var datosMedicine = JSON.stringify(Medicine); //metodo stringify convierte un objeto o valor de JavaScript en una cadena de texto JSON
     fs.writeFile('./Datos/MedicinesD.txt', datosMedicine, (error) => { //WriteFile sirve para escribir sobre un archivo y si este no existe se crea
         if (error) {
             console.log('archivo no leido');

@@ -1,5 +1,7 @@
+//Palabra reservada para declarar una clase Class
 class Medicine {
-
+    //Constructor de medicine
+    //Los atributos siempre con this
      constructor(code, name, amount, unitPrice) {
         this.code = code;
         this.name = name;
