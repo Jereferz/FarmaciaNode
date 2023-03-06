@@ -1,1 +1,1 @@
-[{"nameP":"Drugstore","phoneNumber":"2411111111"}]
+[{"nameP":"Drugstore","phoneNumber":"2411111111"},{"nameP":"TRusGes","phoneNumber":"9992342312"}]

@@ -52,7 +52,15 @@ app.get('/SeeProviderP', (request, response) => {
     var listProvider = funcion.SeeProvider();
     response.send(listProvider);
 });
+app.get('/deleteMedicine', (request, response) => {
+    response.sendFile(path.join(__dirname, './forms/DeleteMedicine.html'));
 
+});
+
+app.post('/deleteMedicine', (request, response) => {
+    funcion.deleteMedicine(request.body);
+    response.redirect('/deleteMedicine');
+});
 app.listen(port, () => {
     console.log('puerto listo');
 })
