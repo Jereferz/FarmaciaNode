@@ -1,1 +1,1 @@
-[{"code":"1234","name":"Ibuprofeno","amount":"10","unitPrice":"50"}]
+[{"code":"1234","name":"Ibuprofeno","amount":"10","unitPrice":"50"},{"code":"1233","name":"Sertal","amount":"4","unitPrice":"8"}]

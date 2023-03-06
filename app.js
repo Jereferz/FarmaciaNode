@@ -35,10 +35,29 @@ function RegisterMedicine(Med) {
         }
     });
 }
+function RegisterProvider(Pro) {
+    var nameP = Pro.nameP;
+    var phoneNumber = Pro.phoneNumber;
+    var objPro= new clases.Provider(nameP, phoneNumber);
+    Provider.push(objPro);
+    var datosProvider = JSON.stringify(Provider);
+    fs.writeFile('./Datos/ProvidersD.txt', datosProvider, (error, datos) => {
+        if (error) {
+            console.log('archivo no leido');
+        } else {
+            console.log('escritura exitosa');
+        }
+    });
+}
 function SeeMedicine(){
     return Medicine;
 }
+function SeeProvider(){
+    return Provider;
+}
 module.exports = {
     RegisterMedicine,
-    SeeMedicine
+    SeeMedicine,
+    RegisterProvider,
+    SeeProvider
 };

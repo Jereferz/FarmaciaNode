@@ -9,8 +9,6 @@
     <title>Farmacia</title>
 </head>
 <body>
-
-    <H1>Farmacaco</H1>
     <div class="navbar navbar-expand-lg bg-light">
         <nav class="nav nav-tabs">
             <a class="nav-link active" aria-current="page" href="http://localhost:3005/RegisterMedicine">Registrar Medicina</a>
@@ -20,5 +18,40 @@
     
         </nav>
     </div>
+    <h2>Proveedores </h2>
+    <div>
+        <form action="http://localhost:3005/SeeProvider" method="GET">
+          <table class="table table-light table-striped">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Numero de Celular</th>
+              </tr>
+            </thead>
+            <tbody id="tableP">
+            </tbody>
+        </form>
+        </table>
+      
+      
+        <script>
+          
+          fetch("http://localhost:3005/SeeProviderP")
+            .then(response => response.json())
+            .then(listProvider => SeeProvider(listProvider))
+            .catch(error => console.log(error));
+      
+          const SeeProvider = (inv) => {
+            var invTabla = "";
+            console.log(inv[0]);
+            for (var i = 0; i < inv.length; i++) {
+                invTabla = invTabla + "</td><td>" + inv[i].nameP + "</td><td>" + inv[i].phoneNumber + "</tr>";
+            }
+            document.getElementById('tableP').innerHTML = invTabla;
+            
+          };
+        </script>
+    
+      </div>
 </body>
 </html>

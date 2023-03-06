@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Farmacia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
@@ -21,7 +21,7 @@
 
     <h2>Añadir Medicina</h2>  <!-- Formulario para agregar medicina tiene todos los campos para los atributopps del objeto Medicine  -->
     
-    <form action="http://localhost:3001/RegisterMedicine" method="POST" class="row g-3 needs-validation" novalidate>
+    <form action="http://localhost:3005/RegisterMedicine" method="POST" class="row g-3 needs-validation" novalidate>
         <div class="col-md-4">
             <label for="validationCustom01" class="form-label">Codigo</label>
             <input type="text" class="form-control" id="validationCustom01" placeholder="Codigo" name="code" required>
@@ -41,27 +41,9 @@
             <label for="validationCustom02" class="form-label">Precio por unidad</label>
             <input type="text" class="form-control" id="validationCustom02" name="unitPrice" placeholder="Precio">
         </div>
-        <!-- <div class="col-md-3">
-            <label for="validationCustom04" class="form-label">Sexo</label>
-            <select class="form-select" name="sexo" required="">
-                <option selected disabled value="">Genero...</option>
-                <option>Fem</option>
-                <option>Mas</option>
-                <option>Otro</option>
-
-            </select>
-        </div>
-        <div class="col-md-3">
-            <label for="validationCustom05" class="form-label">DNI</label>
-            <input type="text" class="form-control" id="validationCustom05" name="dni" placeholder="46253381" value="">
-        </div>-->
         <div class="col-12">
             <button class="btn btn-outline-success" type="submit" value="">Registrar</button>
         </div> 
     </form>
-
-
-
-    <script src="" async defer></script>
 </body>
 </html>
