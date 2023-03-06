@@ -18,21 +18,21 @@ const port = 3005;
 app.get('/', (request, response) => { 
     response.sendFile(path.join(__dirname, './View/Menu.html'));
 });
-app.get('/registerMedicine', (request, response) => {//Cuando se reciba la ruta /forms/RegisterMedicine.html en el server
+app.get('/regisMedic', (request, response) => {//Cuando se reciba la ruta /forms/RegisterMedicine.html en el server
     response.sendFile(path.join(__dirname, './forms/RegisterMedicine.html'));// devuelve el formulario de RegisterMedicine.html
 });
-app.get('/registerProvider', (request, response) => {
+app.get('/regisProvi', (request, response) => {
     response.sendFile(path.join(__dirname, './forms/RegisterProvider.html'));
 });
 app.post('/registerMedicine', (request,response) => {//(Objeto y atributo) donde el atributo es un json
     console.log('llego un post AñadirM');
     funcion.registerMedicine(request.body); // pedido y json con el contenido del formulario
-    response.redirect('/registerMedicine') // Dudas ???? como resuelve esta parte
+    response.redirect('/regisMedic') // Dudas ???? como resuelve esta parte
 });
 app.post('/registerProvider', (request,response) => {
     console.log('llego un post AñadirP');
     funcion.registerProvider(request.body); 
-    response.redirect('/registerProvider')
+    response.redirect('/regisProvi')
 });
 app.get('/Menu', (request, response) => {
     response.sendFile(path.join(__dirname, './View/Menu.html'));
