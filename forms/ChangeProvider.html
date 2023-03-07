@@ -37,22 +37,37 @@
       
         <script>
           
-          fetch("http://localhost:3005/SeeProviderP")
-            .then(response => response.json())
-            .then(listProvider => SeeProvider(listProvider))
-            .catch(error => console.log(error));
-      
-          const SeeProvider = (inv) => {
-            var invTabla = "";
-            console.log(inv[0]);
-            for (var i = 0; i < inv.length; i++) {
-                invTabla = invTabla + "</td><td>" + inv[i].nameP + "</td><td>" + inv[i].phoneNumber + "</tr>";
-            }
-            document.getElementById('tableP').innerHTML = invTabla;
-            
-          };
-        </script>
-    
-      </div>
+            fetch("http://localhost:3005/SeeProviderP")
+              .then(response => response.json())
+              .then(listProvider => SeeProvider(listProvider))
+              .catch(error => console.log(error));
+        
+            const SeeProvider = (inv) => {
+              var invTabla = "";
+              console.log(inv[0]);
+              for (var i = 0; i < inv.length; i++) {
+                  invTabla = invTabla + "</td><td>" + inv[i].nameP + "</td><td>" + inv[i].phoneNumber + "</tr>";
+              }
+              document.getElementById('tableP').innerHTML = invTabla;
+              
+            };
+          </script>
+        <div class="text-center">
+            <form action="http://localhost:3005/changePro" method="POST">
+                <h3>Nuevo Celular</h3>
+                <p>
+                    <h5>Nombre de Proveedor</h5>
+                    <input type="text" name="nameP">
+                </p>
+                <p>
+                    <h5>Numero de Celular</h5>
+                    <input type="text" name="phoneNumber">
+                </p>
+                <p>
+                    <input type="submit" value="Guardar" type="button" class="btn btn-outline-dark">
+                </p>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

@@ -61,6 +61,13 @@ app.post('/deleteMedicine', (request, response) => {
     funcion.deleteMedicine(request.body);
     response.redirect('/deleteMedicine');
 });
+app.get('/changeProvider', (request, response) => { //el servidor recibe la ruta ver  
+    response.sendFile(path.join(__dirname, './forms/ChangeProvider.html')); //muestra el archivo html con los pacientes
+});
+app.post('/changePro', (request, response) => {
+    funcion.changeProviderPhone(request.body);
+    response.redirect('/changeProvider');
+});
 app.listen(port, () => {
     console.log('puerto listo');
 })

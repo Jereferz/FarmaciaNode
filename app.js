@@ -67,10 +67,31 @@ function deleteMedicine(Med) {
         }
     });
 }
+function changeProviderPhone(datos){
+    var nomProv = datos.nameP;
+    var newPhone = datos.phoneNumber;
+  
+    for (var i = 0; i < Provider.length; i++) {
+        if (nomProv == Provider[i].nameP) {
+            Provider[i].phoneNumber = newPhone;
+        }
+    }
+
+    var providerDates = JSON.stringify(Provider);
+fs.writeFile('./Datos/ProvidersD.txt', providerDates, (error) => {
+    if (error) {
+        console.log('archivo no leido');
+    } else {
+        console.log('cambio de numero');
+    }
+    });
+
+}
 module.exports = {
     registerMedicine,
     SeeMedicine,
     registerProvider,
     SeeProvider,
-    deleteMedicine
+    deleteMedicine,
+    changeProviderPhone
 };
