@@ -23,10 +23,16 @@
         .navbar{
             background: linear-gradient(90deg, #4AC29A 0%, #BDFFF3 100%);
         }
-        .a,.btn{
-          background: #0f0c29;  /* fallback for old browsers */
-          background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+        .a,
+        .btn,
+        #elim {
+            color: white;
+            background: #0f0c29;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
     </style>
     <!-- JS -->
@@ -35,7 +41,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-    <H1>Farmacaco</H1>
     <div class="navbar navbar-expand-lg bg-light">
         <nav class="nav nav-tabs"> 
             <div class="btn-group">
@@ -60,7 +65,7 @@
             <a id="elim" class="nav-link active" aria-current="page" href="http://localhost:3005/ChangeProvider">Cambiar Celular Proveedor</a>
         </nav>
     </div>
-    <h3>Añadir Proveedor</h3>
+    <h2>Añadir Proveedor</h2>
     <form action="http://localhost:3005/RegisterProvider" method="POST" class="row g-3 needs-validation" novalidate>
         <div class="col-md-4">
             <label for="validationCustom01" class="form-label">Nombre</label>
