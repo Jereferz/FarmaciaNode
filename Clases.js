@@ -57,4 +57,5 @@ class Provider {
         this.nameP = nameP;
     }
 }
+//pone a disposición de otros ficheros Javascript, datos o código que tenemos en el fichero actual.
 module.exports= {Medicine,Provider};
